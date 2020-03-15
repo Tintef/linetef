@@ -1,0 +1,29 @@
+{
+  "name": "Linetef",
+  "description": "",
+  "version": null,
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "icons": {
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "browser_action": {
+    "default_title": "Linetef",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  }
+}

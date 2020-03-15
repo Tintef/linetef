@@ -1,0 +1,111 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1"
+  id="layer1"
+  x="0px" y="0px"
+  viewBox="0 0 900 400"
+  style="enable-background:new 0 0 900 400;"
+  xml:space="preserve">
+  <!-- start shadow -->
+    <filter id="dropshadow" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
+      <feOffset dx="2" dy="-12" result="offsetblur" /> <!-- how much to offset -->
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" /> <!-- slope is the opacity of the shadow -->
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/> <!-- this contains the offset blurred image -->
+        <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+      </feMerge>
+    </filter>
+  <!-- end shadow -->
+
+  <!-- START BOTTOM RULER -->
+    <!-- bottom ruler main -->
+    <rect width="780px" height="100px" x="50px" y="280px" fill="#b0e0ff" />
+    <!-- bottom ruler shadow -->
+    <rect width="780px" height="50px" x="50px" y="330px" fill="#56bdff" />
+    <!-- <rect width="30px" height="50px" x="120px" y="280px" fill="#56bdff" /> -->
+
+    <!-- start marks -->
+      <rect width="20px" height="50px" x="120px" y="330px" fill="#040404" />
+      <rect width="20px" height="25px" x="160px" y="355px" fill="#040404" />
+      <rect width="20px" height="25px" x="200px" y="355px" fill="#040404" />
+      <rect width="20px" height="50px" x="240px" y="330px" fill="#040404" />
+      <rect width="20px" height="25px" x="280px" y="355px" fill="#040404" />
+      <rect width="20px" height="25px" x="320px" y="355px" fill="#040404" />
+      <rect width="20px" height="50px" x="360px" y="330px" fill="#040404" />
+      <rect width="20px" height="25px" x="400px" y="355px" fill="#040404" />
+      <rect width="20px" height="25px" x="440px" y="355px" fill="#040404" />
+      <rect width="20px" height="50px" x="480px" y="330px" fill="#040404" />
+      <rect width="20px" height="25px" x="520px" y="355px" fill="#040404" />
+      <rect width="20px" height="25px" x="560px" y="355px" fill="#040404" />
+      <rect width="20px" height="50px" x="600px" y="330px" fill="#040404" />
+      <rect width="20px" height="25px" x="640px" y="355px" fill="#040404" />
+      <rect width="20px" height="25px" x="680px" y="355px" fill="#040404" />
+      <rect width="20px" height="50px" x="720px" y="330px" fill="#040404" />
+      <rect width="20px" height="25px" x="760px" y="355px" fill="#040404" />
+      <rect width="20px" height="25px" x="800px" y="355px" fill="#040404" />
+    <!-- end marks -->
+
+    <!-- start decoration -->
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#B6C1CC"
+        d="M 830 280 h 15 c 7.5 0 15 7.5 15 15 v 70 c 0 7.5 -7 15 -15 15 h -15 Z"
+      />
+
+      <!-- decoration shadow -->
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#92A2B3"
+        d="M 860 332 v 33 c 0 7.5 -7.5 15 -15 15 h -15 v -50 H 860 Z"
+      />
+    <!-- end decoration -->
+  <!-- END BOTTOM RULER -->
+
+  <!-- START LEFT RULER -->
+    <!-- left ruler -->
+    <rect width="100px" height="310px" x="20px" y="50px" fill="#b0e0ff" style="filter:url(#dropshadow)" />
+
+    <!-- left ruler complement -->
+    <rect width="80px" height="30px" x="40px" y="350px" fill="#b0e0ff" />
+    <!-- left ruler shadow -->
+    <rect width="50px" height="310px" x="20px" y="50px" fill="#56bdff" />
+    <rect width="30px" height="30px" x="40px" y="350px" fill="#56bdff" />
+
+    <!-- start decoration -->
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#B6C1CC"
+        d="M 20 50 h 15 c 7.5 0 15 7.5 15 15 v 70 c 0 7.5 -7 15 -15 15 h -15 Z"
+        transform="rotate(-90) translate(-70 -30)"
+      />
+
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#92A2B3"
+        d="M 20 50 v 33 c 0 7.5 -7.5 15 -15 15 h -15 v -50 H 20 Z"
+        transform="rotate(-90) scale(1 -1) translate(-40 -118)"
+      />
+    <!-- end decoration -->
+
+    <!-- corner circle -->
+    <circle xmlns="http://www.w3.org/2000/svg" fill="#56bdff" cx="40" cy="360" r="20" />
+
+    <!-- start marks -->
+      <rect height="20px" width="25px" x="20" y="60px" fill="#040404" />
+      <rect height="20px" width="25px" x="20" y="100px" fill="#040404" />
+      <rect height="20px" width="50px" x="20" y="140px" fill="#040404" />
+      <rect height="20px" width="25px" x="20" y="180px" fill="#040404" />
+      <rect height="20px" width="25px" x="20" y="220px" fill="#040404" />
+      <rect height="20px" width="50px" x="20" y="260px" fill="#040404" />
+      <rect height="20px" width="25px" x="20" y="300px" fill="#040404" />
+      <rect height="20px" width="25px" x="20" y="340px" fill="#040404" />
+    <!-- end marks -->
+  <!-- END LEFT RULER -->
+
+
+  <!-- union circle -->
+  <circle xmlns="http://www.w3.org/2000/svg" fill="#92A2B3" cx="70" cy="330" r="16" />
+</svg>
