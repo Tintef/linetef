@@ -12,7 +12,7 @@ Vue.use(Vue2TouchEvents, {
   disableClick: true,
 });
 
-new Vue({
+new Vue({ // eslint-disable-line no-new
   el: '#vue-app',
   render(h) {
     return (

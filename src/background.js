@@ -1,10 +1,10 @@
-global.browser = require('webextension-polyfill');
-
 import messages from './data/messages';
 
-chrome.runtime.onMessage.addListener(({ message }, sender, sendResponse) => {
+global.browser = require('webextension-polyfill');
+
+chrome.runtime.onMessage.addListener(({ message }) => {
   if (messages.includes(message)) {
-    chrome.tabs.query({}, tabs => {
+    chrome.tabs.query({}, (tabs) => {
       tabs.forEach(({ id }) => {
         chrome.tabs.sendMessage(id, { message });
       });

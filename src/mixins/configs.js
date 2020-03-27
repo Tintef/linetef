@@ -1,4 +1,4 @@
-export const modes = { px: 'px', percentage: '%'};
+export const modes = { px: 'px', percentage: '%' };
 
 const configsMixin = {
   data() {
@@ -63,7 +63,7 @@ const configsMixin = {
       this.sendMessage();
     },
     changeVRulerPosition(vRulerPosition = 'left') {
-      chrome.storage.sync.set({ vRulerPosition: vRulerPosition });
+      chrome.storage.sync.set({ vRulerPosition });
       this.vRulerPosition = vRulerPosition;
       this.sendMessage();
     },
@@ -100,14 +100,16 @@ const configsMixin = {
         'showViewport',
         'hRulerPosition',
         'vRulerPosition',
-      ], ({ color, mode, on, showDistances, showViewport, hRulerPosition, vRulerPosition }) => {
+      ], ({
+        color, mode, on, showDistances, showViewport, hRulerPosition, vRulerPosition,
+      }) => {
         // First load
         if (
-          color === undefined &&
-          on === undefined &&
-          showDistances === undefined &&
-          showViewport === undefined &&
-          mode === undefined
+          color === undefined
+          && on === undefined
+          && showDistances === undefined
+          && showViewport === undefined
+          && mode === undefined
         ) {
           chrome.storage.sync.set({ color: this.color });
           chrome.storage.sync.set({ mode: this.mode });

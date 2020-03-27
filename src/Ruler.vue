@@ -62,8 +62,8 @@
 
 <script>
 import linesMixin from './mixins/lines';
-import configsMixin, { modes } from './mixins/configs';
-import { prettyDistance } from './helpers'
+import configsMixin from './mixins/configs';
+import { prettyDistance } from './helpers';
 
 import GuideLine from './components/GuideLine';
 import HorizontalRuler from './components/HorizontalRuler';
@@ -112,20 +112,22 @@ export default {
   },
   computed: {
     distances() {
-      const { mode, showDistances, scrollHeight, width } = this;
+      const {
+        mode, showDistances, scrollHeight, width,
+      } = this;
 
       const vDistances = [];
       const hDistances = [];
 
-      if (!showDistances) return { vDistances, hDistances};
+      if (!showDistances) return { vDistances, hDistances };
 
       const topLeft = { x: -5, y: -5 };
       const bottomRight = { x: width, y: scrollHeight };
-      const hLines = [topLeft, ...this.hLines, bottomRight].sort(({ y: y1 }, { y: y2 }) => y1 > y2 ? 1 : -1);
-      const vLines = [topLeft, ...this.vLines, bottomRight].sort(({ x: x1 }, { x: x2 }) => x1 > x2 ? 1 : -1);
+      const hLines = [topLeft, ...this.hLines, bottomRight].sort(({ y: y1 }, { y: y2 }) => (y1 > y2 ? 1 : -1));
+      const vLines = [topLeft, ...this.vLines, bottomRight].sort(({ x: x1 }, { x: x2 }) => (x1 > x2 ? 1 : -1));
 
       if (hLines.length > 2) {
-        for (let it = 0; it < hLines.length - 1; it++) {
+        for (let it = 0; it < hLines.length - 1; it += 1) {
           const actY = hLines[it].y;
           const nextY = hLines[it + 1].y;
 
@@ -143,7 +145,7 @@ export default {
       }
 
       if (vLines.length > 2) {
-        for (let it = 0; it < vLines.length - 1; it++) {
+        for (let it = 0; it < vLines.length - 1; it += 1) {
           const actX = vLines[it].x;
           const nextX = vLines[it + 1].x;
 
@@ -165,16 +167,22 @@ export default {
     horizontalLines() {
       const { hLines, vLines } = this;
 
-      if (vLines.length > 0 && hLines.length === 0)
-        return [{ x: 0, y: 0, type: 'horizontal', special: true }];
+      if (vLines.length > 0 && hLines.length === 0) {
+        return [{
+          x: 0, y: 0, type: 'horizontal', special: true,
+        }];
+      }
 
       return hLines;
     },
     verticalLines() {
       const { hLines, vLines } = this;
 
-      if (hLines.length > 0 && vLines.length === 0)
-        return [{ x: 0, y: 0, type: 'vertical', special: true }];
+      if (hLines.length > 0 && vLines.length === 0) {
+        return [{
+          x: 0, y: 0, type: 'vertical', special: true,
+        }];
+      }
 
       return vLines;
     },

@@ -20,22 +20,22 @@ const linesMixin = {
   methods: {
     addMouseListeners() {
       document.addEventListener('mousemove', this.onMouseMove);
-      document.addEventListener('mouseup',   this.onMouseUp);
+      document.addEventListener('mouseup', this.onMouseUp);
     },
     removeMouseListeners() {
       document.removeEventListener('mousemove', this.onMouseMove);
-      document.removeEventListener('mouseup',   this.onMouseUp);
+      document.removeEventListener('mouseup', this.onMouseUp);
     },
     addTouchListeners() {
       document.addEventListener('touchmove', this.onTouchMove);
-      document.addEventListener('touchend',  this.onTouchEnd);
+      document.addEventListener('touchend', this.onTouchEnd);
 
       this.bodyOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
     },
     removeTouchListeners() {
       document.removeEventListener('touchmove', this.onTouchMove);
-      document.removeEventListener('touchend',  this.onTouchEnd);
+      document.removeEventListener('touchend', this.onTouchEnd);
 
       document.body.style.overflow = this.bodyOverflow;
     },
@@ -58,7 +58,7 @@ const linesMixin = {
       try {
         this.addTouchListeners();
         this.start(this.getNativeCoords(ev), type);
-      } catch(error) {
+      } catch (error) {
         // The event is not native
         // console.error('error: ', error);
       }
@@ -98,7 +98,7 @@ const linesMixin = {
     },
 
     // Common code for both mouse/touch events
-    start({ x, y}, type) {
+    start({ x, y }, type) {
       const newLines = this.getNewLines(type);
       newLines.push({ x, y, type });
 
@@ -135,8 +135,7 @@ const linesMixin = {
           y: y || newLines[index].y,
         };
 
-        if (!(x > 20 && y > 20))
-          newLines.splice(index, 1);
+        if (!(x > 20 && y > 20)) newLines.splice(index, 1);
 
         this.setLines(type, newLines);
       }
@@ -183,10 +182,11 @@ const linesMixin = {
     },
     setLines(type = 'horizontal', newLines = []) {
       if (type === 'horizontal') {
-        return this.hLines = newLines;
+        this.hLines = newLines;
+        return;
       }
 
-      return this.vLines = newLines;
+      this.vLines = newLines;
     },
   },
 };

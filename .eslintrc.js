@@ -48,6 +48,7 @@ module.exports = {
     // disallow default export over named export
     'import/prefer-default-export': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "max-len": ["error", 120, 2]
   }
 }

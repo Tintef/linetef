@@ -70,9 +70,9 @@ export default {
     },
     distances: {
       type: Object,
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

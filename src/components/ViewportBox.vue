@@ -34,7 +34,7 @@ export default {
 
       return {
         textAlign: 'center',
-        transform: `rotate(-${Math.atan(height/width) * 180 / Math.PI}deg)`,
+        transform: `rotate(-${(Math.atan(height / width) * 180) / Math.PI}deg)`,
         width: `${Math.sqrt(height ** 2 + width ** 2)}px`,
       };
     },

@@ -132,7 +132,7 @@
 import { Compact } from 'vue-color';
 import { ToggleButton } from 'vue-js-toggle-button';
 
-import configsMixin, { modes } from '../mixins/configs';
+import configsMixin from '../mixins/configs';
 
 import Shortcuts from '../components/Shortcuts';
 import WithTooltip from '../components/WithTooltip';
@@ -181,8 +181,8 @@ export default {
       }
     },
     deleteAllLines() {
-      this.sendMessage('linetef:delete:all:lines')
-    }
+      this.sendMessage('linetef:delete:all:lines');
+    },
   },
   computed: {
     getPalette() {
