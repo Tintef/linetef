@@ -1,8 +1,9 @@
 {
   "name": "linetef",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "Chrome extension to add guide lines and measure everything!",
   "author": "Tintef",
+  "license": "MIT",
   "engines": {
     "node": ">=10"
   },
