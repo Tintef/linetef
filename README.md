@@ -17,7 +17,7 @@ Linetef is a chrome extension and it's intention is to allow users to quickly ad
 * See the viewport size (width x height).
 * Select the color of the created guides.
 * Choose the position of the rulers (top/bottom and left/right of the screen).
-* Show/hide the hole extension.
+* Show/hide the whole extension.
 * Show/hide the distances between elements (useful if you just want to see if some elements are aligned).
 * Show/hide the viewport size.
 
